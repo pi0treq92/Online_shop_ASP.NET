@@ -1,0 +1,25 @@
+﻿@model IEnumerable<twoja_manufaktura.Models.Product>
+@using twoja_manufaktura.Infrastructure
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a class="productdetailslink" href="asd">
+                            <img class="card-img-top" src="@Url.ProductImagePath(product.PhotoFileName)">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = product.ProductId })">@product.Name</a>
+                            </h4>
+                            <h5>@product.Price $</h5>
+                            <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new {id = product.ProductId })">
+                                <img src="/Content/Icons/64/iconmonstr-basket-14-48.png">
+                            </a>
+                            <p class="card-text">@product.Description</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        </div>
+                    </div>
+                </div>
+            }

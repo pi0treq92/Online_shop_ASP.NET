@@ -1,8 +1,22 @@
-﻿
+﻿@model IEnumerable<twoja_manufaktura.Models.Product>
 @{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>List</h2>
+<div class="container">
+    <div class="row">
+        @Html.Action("GenresMenu")
+        <div class="col-lg-9">
+            <div id="productlist-content">
+                <div id="productlist-rightsection">
+                    <div id="breadcrumb-section">
+                        <img src="@Url.Content("~/Content/Icons/64/iconmonstr-home-1-64.png")" />
+                        @Html.MvcSiteMap().SiteMapPath()
+                    </div>
+                    @Html.Partial("_ProductList")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

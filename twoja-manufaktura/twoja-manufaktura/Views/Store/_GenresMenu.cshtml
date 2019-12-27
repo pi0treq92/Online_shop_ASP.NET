@@ -1,0 +1,17 @@
+﻿@using twoja_manufaktura.Infrastructure
+@model IEnumerable<twoja_manufaktura.Models.Genre>
+
+    <div class="col-lg-3">
+
+        <h1 class="my-4"><img src="/Content/Images/logo.jpg" /></h1>
+        <div class="list-group">
+            @foreach (var genre in Model)
+            {
+                <a href="@Url.Action("List", "Store", new {genrename = genre.Name.ToLower() })"
+                   style="background-image: url(@Url.GenreIconPath(genre.IconFileName));background-position:right;background-repeat:no-repeat" class="list-group-item">@genre.Name</a>
+
+            }
+
+        </div>
+
+    </div>
