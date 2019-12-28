@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace twoja_manufaktura.DAL
 {
     //StoreContext reprezentuje cala baze danych
     //Umieszczone w niej pola reprezentuja poszczególne tabele
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<ApplicationUser>
     {
         public StoreContext() : base("StoreContext")
         {
@@ -18,6 +19,10 @@ namespace twoja_manufaktura.DAL
         static StoreContext()
         {
             Database.SetInitializer<StoreContext>(new StoreInitializer());
+        }
+        public static StoreContext Create()
+        {
+            return new StoreContext();
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
