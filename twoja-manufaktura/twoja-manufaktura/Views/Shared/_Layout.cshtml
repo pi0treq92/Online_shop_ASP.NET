@@ -19,15 +19,16 @@
     <script src="~/Views/Shared/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="~/Templates/Site.css">
+    @System.Web.Optimization.Styles.Render("~/Content/themes/base/css")
 </head>
 <body>
     <header>
         <div style="overflow: hidden;">
             <a id="facebook-header" href="">
-                DOŁĄCZ DO 1500 FANÓW NA FB
+                DOŁĄCZ DO NAS NA FB
             </a>
             <a id="cart-header-link" href="">
-                KOSZYK (0)
+                KOSZYK (<span>@Html.Action("LiczbaRzeczyWKoszyku", "Koszyk")</span>)
                 <span></span>
             </a>
         </div>

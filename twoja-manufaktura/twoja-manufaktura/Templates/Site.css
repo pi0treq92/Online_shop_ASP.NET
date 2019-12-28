@@ -100,7 +100,7 @@ input, select {
 /* Main page styles */
 
 body {
-    width: 1000px;
+    width: 1200px;
     margin: auto;
     font-family: 'Segoe UI';
 }
@@ -609,6 +609,10 @@ ul.ThreeColumnsStaticCoversList {
     padding: 2px 5px 2px 2px;
     border: 1px solid #e0e0e0;
 }
+    #search-form.sample{
+        margin-top:35px;
+        margin-left: 350px;
+    }
 
     #search-form input[type=search] {
         border: none;
@@ -671,6 +675,7 @@ div.section-header {
 #cart-table {
     width: 100%;
     border-collapse: collapse;
+    margin-left: -40px;
 }
 
     #cart-table tr {
@@ -725,6 +730,7 @@ div.section-header {
 
 .section-button-container {
     overflow: hidden;
+    margin-left: -50px;
 }
 
     .section-button-container :nth-child(1) {
@@ -733,6 +739,7 @@ div.section-header {
 
     .section-button-container :nth-child(2) {
         float: right;
+        margin-right: 60px;
     }
 
 #total-price {
@@ -742,6 +749,7 @@ div.section-header {
     margin-bottom: 60px;
     font-family: 'Segoe UI SemiBold';
     font-size: 18px;
+    margin-left: -60px;
 }
 
 .button-link {

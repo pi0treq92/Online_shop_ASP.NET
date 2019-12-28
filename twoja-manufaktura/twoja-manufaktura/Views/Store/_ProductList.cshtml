@@ -12,7 +12,7 @@
                                 <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = product.ProductId })">@product.Name</a>
                             </h4>
                             <h5>@product.Price $</h5>
-                            <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new {id = product.ProductId })">
+                            <a class="addtocartlink" href="@Url.Action("DodajDoKoszyka", "Koszyk", new {id = product.ProductId })">
                                 <img src="/Content/Icons/64/iconmonstr-basket-14-48.png">
                             </a>
                             <p class="card-text">@product.Description</p>

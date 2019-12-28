@@ -1,0 +1,100 @@
+﻿@model twoja_manufaktura.ViewModels.KoszykViewModel
+@using twoja_manufaktura.Infrastructure
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        @Html.Action("GenresMenu", "Store")
+        <div class="col-lg-9">
+            <div id="productlist-content">
+                <div id="productlist-rightsection">
+                    <div id="breadcrumb-section">
+                        <img src="../Content/Images/home-small.png" />
+                            @Html.MvcSiteMap().SiteMapPath()
+                        </div>
+                    </div>
+                    <section class="content-section">
+                        <div class="section-header" style="margin-bottom: 0px;">
+                            <h1>Twój koszyk</h1>
+                        </div>
+
+                        <table id="cart-table">
+                            @foreach (var koszykItem in Model.KoszykItems)
+                            {
+                            <tr id="cart-row-@koszykItem.Product.ProductId">
+                                <td>
+                                    <a href="@Url.Action("Details", "Store", new { id = koszykItem.Product.ProductId })">
+                                        <img src="@Url.Content("~/Content/Covers/" + koszykItem.Product.PhotoFileName)" />
+                                    </a>
+                                </td>
+                                <td><a href="@Url.Action("Details", "Store", new { id = koszykItem.Product.ProductId })">@koszykItem.Product.Name</a></td>
+                                <td>Ilość: <span id="cart-item-count-@koszykItem.Product.ProductId">@koszykItem.Quantity</span></td>
+                                <td>@String.Format("{0:0.##}", koszykItem.TotalPrice) zł</td>
+                                <td><a class="removeProduct" data-id="@koszykItem.Product.ProductId" href="#">Usuń</a></td>
+                            </tr>
+                            }
+                        </table>
+
+                        <div id="total-price" style="">
+                            Razem: <span id="total-price-value">@String.Format("{0:0.##}", Model.TotalPrice)</span> zł
+                        </div>
+
+                        <div class="section-button-container">
+                            <a class="button-link" href="">Kontynuuj zakupy</a>
+                            @if (Model.TotalPrice > 0)
+                            {
+                            <a class="button-link" id="cart-button-checkout" href="@Url.Action("Checkout", "Koszyk")">Zapłać</a>
+                            }
+                        </div>
+
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="~/Scripts/jquery-1.1.0.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(function () {        
+        $(".removeProduct").click(function () {
+            // identyfikator data-id umożliwia ajax znalezienie elementów do usuniecia
+            var recordToDelete = $(this).attr("data-id");
+
+            if (recordToDelete != '') {
+
+                // Wyślij post request  AJAX
+                $.post("/Koszyk/UsunZKoszyka", { "productId": recordToDelete },
+                    function (response) {
+                        // Sukces, zwraca w JSON'ie informacje o usuwanym elemencie
+                        if (response.RemovedItemCount == 0) {
+                            //identyfikator wiersza, Usuń wierszjeśli usunięte wszystkie elementy
+                            $('#cart-row-' + response.RemovedItemId).fadeOut('slow', function () {
+                                if (response.KoszykItemsCount == 0) {
+                                    $("#cart-empty-message").removeClass("hidden");
+                                }
+                            });
+                        } else {
+                            $('#cart-item-count-' + response.RemovedItemId).text(response.RemovedItemCount);                            
+                        }
+
+                        if (response.KoszykItemsCount == 0) {
+                            $('#cart-button-checkout').addClass('hidden');
+                            $('#total-price').addClass('invisible');
+                        }
+                        //Łączna wartość koszyka, zwracana wartość po akcji AJAX
+                        $('#total-price-value').text(response.KoszykTotalPrice);                        
+                        $('#cart-header-items-count').text(response.KoszykItemsCount);
+
+                    });
+
+                return false;
+            }
+        });
+
+    });
+    </script>
+

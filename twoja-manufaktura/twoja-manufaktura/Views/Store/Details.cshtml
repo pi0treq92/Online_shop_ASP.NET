@@ -36,7 +36,7 @@
                                 <div>
                                     @Model.Price<span>PLN</span>
                                 </div>
-                                <a href="@Url.Action("AddToCart", "Cart", new {id = Model.ProductId }) "></a>
+                                <a href="@Url.Action("DodajDoKoszyka", "Koszyk", new {id = Model.ProductId }) "></a>
                             </div>
                             <div id="product-details-description">
                                 @Model.Description
