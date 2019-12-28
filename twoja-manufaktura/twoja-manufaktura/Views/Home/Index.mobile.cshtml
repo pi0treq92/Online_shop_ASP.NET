@@ -1,0 +1,73 @@
+﻿@model twoja_manufaktura.ViewModels.HomeViewModel
+@using twoja_manufaktura.Infrastructure
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexmobile</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    @Html.Partial("_ViewSwitcher")
+    <h3 class="ui-bar ui-bar-a">Witam w sklepie Twoja Manufaktura</h3>
+    <div class="ui-body">
+        <ul data-role="listview" data-inset="true" data-dividertheme="a">
+            <li data-role="list-divider">Nowości</li>
+
+            @foreach (var newArrival in Model.NewArrivals)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Store", new {id = newArrival.ProductId })" data-ajax="false">
+                        <img src="@Url.Content("~/Content/Images/" + newArrival.PhotoFileName)" />
+                        <h2>@newArrival.Name</h2>
+                    </a>
+                </li>
+            }
+
+            <li data-role="list-divider">Bestsellery</li>
+
+            @foreach (var bestseller in Model.Bestsellers)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Store", new {id = bestseller.ProductId })" data-ajax="false">
+                        <img src="@Url.Content("~/Content/Images/" + bestseller.PhotoFileName)" />
+                        <h2>@bestseller.Name</h2>
+                    </a>
+                </li>
+            }
+        </ul>
+        <br />
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Szukaj produktu..." data-inset="true">
+            @foreach (var genre in Model.Genres)
+            {
+                <li>
+                    <a href="@Url.Action("List", "Store", new { genrename = genre.Name})" data-ajax="false">@genre.Name</a>
+                </li>
+            }
+        </ul>
+        <br />
+        <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="https://facebook.com/pi0treq92" data-ajax="false" data-icon="heart">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("StaticContent", "Home", new {viewname = "About" })" data-ajax="false" data-icon="info">About</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("StaticContent", "Home", new {viewname = "Contact" })" data-ajax="false" data-icon="phone">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

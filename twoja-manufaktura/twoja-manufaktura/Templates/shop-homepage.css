@@ -1,0 +1,52 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+header {
+    height: 160px;
+    background-image: url(images/aaaa.jpg);
+}
+
+#facebook-header {
+    width: 233px;
+    height: 42px;
+    background-color: #39312E;
+    color: white;
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    background-image: url(../Content/Images/fb_white.png);
+    background-repeat: no-repeat;
+    background-position: 4% 55%;
+    padding-left: 40px;
+}
+#cart-header-link {
+    width: 143px;
+    height: 42px;
+    background-color: #39312E;
+    color: white;
+    float: right;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+    #cart-header-link > span {
+        width: 42px;
+        height: 42px;
+        background-color: #585858;
+        float: right;
+        background-image: url(../Content/Images/cart_white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+#main-header-logo {
+    margin-top: 25px;
+    margin-bottom: 500px;
+    display: block;
+}

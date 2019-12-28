@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="handmade" content="">
+    <meta name="Piotr Migdalski" content="">
+
+    <title>Twoja Manufaktura</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="shop-homepage.css">
+
+    <link href="../Templates/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div style="overflow: hidden;">
+            <a id="facebook-header" href="">
+                DOŁĄCZ DO 1500 FANÓW NA FB
+            </a>
+            <a id="cart-header-link" href="">
+                KOSZYK (0)
+                <span></span>
+            </a>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Twoja Manufaktura</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            @Html.ActionLink("Home", "StaticContent", "Home", new { viewname = "index" }, null)
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="about" })">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="gallery" })">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="contact" })">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Twoja Manufaktura</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            @Html.ActionLink("Home", "StaticContent", "Home", new { viewname = "index" }, null)
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="about" })">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="gallery" })">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action(" StaticContent", "Home" , new { viewname="contact" })">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+
+                <h1 class="my-4"><img src="/Content/Images/logo.jpg" /></h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Kwietniki</a>
+                    <a href="#" class="list-group-item">Łapacze snów</a>
+                    <a href="#" class="list-group-item">Coś tam</a>
+                </div>
+
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+                <div id="productlist-content">
+                    <div id="productlist-rightsection">
+                        <div id="breadcrumb-section">
+                            <img src="../Content/Images/home-small.png" />
+                            <a href="nav">
+                                Start > Hip Hop
+                            </a>
+                        </div>
+                        <section id="product-details-section">
+                            <div id="product-details-left">
+                                <img src="../Content/Images/8.png" />
+                                <div id="product-details-share">
+                                    <a href="fbshare"></a>
+                                    <a href="twshare"></a>
+                                </div>
+                            </div>
+                            <div id="product-details-right">
+                                <div id="product-details-names">
+
+                                    <h1>
+                                        All that nothing
+                                    </h1>
+
+                                    <h2>
+                                        Polovitas Kovalsky
+                                    </h2>
+                                </div><div id="product-details-price">
+                                    <div>
+                                        99<span>PLN</span>
+                                    </div>
+                                    <a href="addtocart"></a>
+                                </div>
+                                <div id="product-details-description">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
+                                </div>
+                                <div id="product-details-info">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce.
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy;Twoja Manufaktura</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

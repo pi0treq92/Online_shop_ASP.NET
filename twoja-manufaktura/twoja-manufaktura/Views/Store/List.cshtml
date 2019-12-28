@@ -1,0 +1,69 @@
+﻿@model IEnumerable<twoja_manufaktura.Models.Product>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        @Html.Action("GenresMenu")
+        <div id="breadcrumb-section">
+            <img src="@Url.Content("~/Content/Icons/64/iconmonstr-home-1-64.png")" />
+            @Html.MvcSiteMap().SiteMapPath()
+            <form id="search-form" class="sample" method="get" data-ajax-target="#productlist-section">
+                <input id="search-filter" type="search" name="searchQuery"
+                       data-autocomplete-source="@Url.Action("ProductsSuggestions")"
+                       placeholder="Filter.." />
+                <input type="submit" value="" />
+            </form>
+        </div>
+        <div style="flex: 0 0 80%; max-width: 100%; margin-top: -200px; margin-left: 270px; display: inline-flex;">
+            @Html.Partial("_ProductList")
+            <!--Widok cząstkowy _ProductList.cshtml -->
+        </div>
+    </div>
+ </div>
+@section ScriptsBottom {
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var ajaxSubmit = function () {
+
+                var $form = $(this);
+
+                var settings = {
+                    data: $(this).serialize(),
+                    url: $(this).attr("action"),
+                    type: $(this).attr("method")
+                };
+
+                $.ajax(settings).done(function (result) {
+                    var $targetElement = $($form.data("ajax-target"));
+                    var $newContent = $(result);
+                    $($targetElement).replaceWith($newContent);
+                    $newContent.effect("slide");
+                });
+
+                return false;
+            };
+
+            var setupAutoComplete = function () {
+                var $input = $(this);
+
+                var options = {
+                    source: $input.attr("data-autocomplete-source"),
+                    select: function (event, ui) {
+                        $input = $(this);
+                        $input.val(ui.item.label);
+                        var $form = $input.parents("form:first");
+                        $form.submit();
+                    }
+                };
+                $input.autocomplete(options);
+            };
+            $("#search-filter").each(setupAutoComplete);
+            $("#search-form").submit(ajaxSubmit);
+        });
+    </script>
+    }
+
