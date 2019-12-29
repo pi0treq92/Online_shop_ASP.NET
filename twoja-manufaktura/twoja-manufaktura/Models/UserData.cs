@@ -14,7 +14,8 @@ namespace twoja_manufaktura.Models
 
         public string Address { get; set; }
 
-        public string CodeAndCity { get; set; }
+        public int Code { get; set; }
+        public string City { get; set; }
 
         [RegularExpression(@"(\+\d{2})*[\d\s-]+",
             ErrorMessage = "Nr telefonu nieprawidłowy")]

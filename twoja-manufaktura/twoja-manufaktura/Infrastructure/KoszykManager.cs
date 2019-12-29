@@ -99,12 +99,12 @@ namespace twoja_manufaktura.Infrastructure
             return count;
         }
 
-        public Order CreateOrder(Order newOrder, string userId)
+        public Order UtworzZamowienie(Order newOrder, string userId)
         {
             var koszyk = this.GetKoszyk();
 
             newOrder.DateCreated = DateTime.Now;
-            //newOrder.UserId = userId;
+            newOrder.UserId = userId;
 
             this.db.Orders.Add(newOrder);
 
@@ -134,7 +134,7 @@ namespace twoja_manufaktura.Infrastructure
             return newOrder;
         }
 
-        public void EmptyKoszyk()
+        public void PustyKoszyk()
         {
             session.Set<List<ItemKoszyk>>(SessionKey, null);
         }

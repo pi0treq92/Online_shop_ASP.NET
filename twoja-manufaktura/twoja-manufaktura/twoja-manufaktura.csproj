@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -248,6 +249,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KoszykController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\ViewSwitcherController.cs" />
     <Compile Include="DAL\StoreContext.cs" />
@@ -257,6 +259,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\IMailService.cs" />
     <Compile Include="Infrastructure\ISessionManager.cs" />
     <Compile Include="Infrastructure\KoszykManager.cs" />
     <Compile Include="Infrastructure\ProductDetailsDynamicNodeProvider.cs" />
@@ -270,6 +273,22 @@
     <Compile Include="Migrations\201912281809496_AddedAspNetIdentity.cs" />
     <Compile Include="Migrations\201912281809496_AddedAspNetIdentity.designer.cs">
       <DependentUpon>201912281809496_AddedAspNetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912291530160_Checkout.cs" />
+    <Compile Include="Migrations\201912291530160_Checkout.designer.cs">
+      <DependentUpon>201912291530160_Checkout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912291550114_Order.cs" />
+    <Compile Include="Migrations\201912291550114_Order.designer.cs">
+      <DependentUpon>201912291550114_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912291554039_Order1.cs" />
+    <Compile Include="Migrations\201912291554039_Order1.designer.cs">
+      <DependentUpon>201912291554039_Order1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912291606543_User-owner.cs" />
+    <Compile Include="Migrations\201912291606543_User-owner.designer.cs">
+      <DependentUpon>201912291606543_User-owner.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -285,6 +304,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\KoszykRemoveViewModel.cs" />
     <Compile Include="ViewModels\KoszykViewModel.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -317,6 +337,12 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_PartialView.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Shared\_ManageLayout.cshtml" />
+    <Content Include="Views\Koszyk\Checkout.cshtml" />
+    <Content Include="Views\Koszyk\PotwierdzenieZamowienia.cshtml" />
+    <Content Include="Views\Manage\OrdersList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -346,6 +372,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912281809496_AddedAspNetIdentity.resx">
       <DependentUpon>201912281809496_AddedAspNetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912291530160_Checkout.resx">
+      <DependentUpon>201912291530160_Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912291550114_Order.resx">
+      <DependentUpon>201912291550114_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912291554039_Order1.resx">
+      <DependentUpon>201912291554039_Order1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912291606543_User-owner.resx">
+      <DependentUpon>201912291606543_User-owner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -20,7 +20,7 @@ namespace twoja_manufaktura
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //Ni¿ej jeden ze sposobow na inicjalizowanie danych w bazie danych
             // Inny to ustawienie w web.config oraz statyczny konstruktor w StoreContext.cs
-            // Database.SetInitializer<StoreContext>(new StoreInitializer());
+            //Database.SetInitializer<StoreContext>(new StoreInitializer());
         }
     }
 }

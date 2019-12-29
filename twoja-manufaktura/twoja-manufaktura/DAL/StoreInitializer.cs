@@ -6,6 +6,8 @@ using System.Web;
 using twoja_manufaktura.Migrations;
 using twoja_manufaktura.Models;
 using System.Data.Entity.Migrations;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace twoja_manufaktura.DAL
 {
@@ -45,6 +47,47 @@ namespace twoja_manufaktura.DAL
             };
             products.ForEach(p => context.Products.AddOrUpdate(p));
             context.SaveChanges();
+        }
+        public static void IdentityForApplication(StoreContext db)
+        {
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
+
+            const string name = "admin@admin.pl";
+            const string password = "P@ssw0rd";
+            const string roleName = "Admin";
+
+
+            var user = userManager.FindByName(name);
+            if (user == null)
+            {
+                user = new ApplicationUser { UserName = name, Email = name, UserData = new UserData() };
+                var result = userManager.Create(user, password);
+                result = userManager.SetLockoutEnabled(user.Id, false);
+            }
+
+            //Create Role Admin if it does not exist
+            var role = roleManager.FindByName(roleName);
+            if (role == null)
+            {
+                role = new IdentityRole(roleName);
+                var roleresult = roleManager.Create(role);
+            }
+
+            //var user = userManager.FindByName(name);
+            //if (user == null)
+            //{
+            //    user = new ApplicationUser { UserName = name, Email = name };
+            //    var result = userManager.Create(user, password);
+            //    result = userManager.SetLockoutEnabled(user.Id, false);
+            //}
+
+            //Add user admin to Role Admin if not already added
+            var rolesForUser = userManager.GetRoles(user.Id);
+            if (!rolesForUser.Contains(role.Name))
+            {
+                var result = userManager.AddToRole(user.Id, role.Name);
+            }
         }
     }
 }

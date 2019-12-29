@@ -1,0 +1,93 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="handmade" content="">
+        <meta name="Piotr Migdalski" content="">
+        <title>@ViewBag.Title</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="~/Templates/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script src="~/Views/Shared/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Views/Shared/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="~/Templates/Site.css">
+        @System.Web.Optimization.Styles.Render("~/Content/themes/base/css")
+    </head>
+    <style>
+        .manageLink {
+            height: 42px;
+            float: left;
+            line-height: 40px;
+            font-size: 14px;
+            padding-left: 40px;
+            /*background-color: #585858;*/
+            background-color: #39312E;
+            color: white;
+        }
+
+        a.manageLink, a.manageLink:hover, a.manageLink:visited {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="overflow: hidden; margin-bottom: 30px;">
+
+            <a class="manageLink" href="@Url.Action("Index", "Home")">
+                Start
+            </a>
+            <a class="manageLink" href="@Url.Action("Index", "Manage")">
+                Twoje dane
+            </a>
+            @if (@User.IsInRole("Admin"))
+            {
+                <a class="manageLink" href="@Url.Action("AddProduct", "Manage")">
+                    Dodaj
+                </a>
+                <a class="manageLink" href="@Url.Content("~/hangfire")">
+                    Jobs
+                </a>
+                <a class="manageLink" href="@Url.Content("~/elmah")">
+                    Logi
+                </a>
+            }
+            <a class="manageLink" href="@Url.Action("OrdersList", "Manage")" style="width: 100px">
+                Zamówienia
+            </a>
+
+            <a id="cart-header-link" href="@Url.Action("Index", "Koszyk")">
+                KOSZYK (<span id="cart-header-items-count">@Html.Action("LiczbaRzeczyWKoszyku", "Koszyk")</span>)
+                <span id="cart-header-logo"></span>
+            </a>
+
+            @Html.Partial("_PartialView")
+
+        </div>
+
+        <div id="breadcrumb-section">
+            <img src="@Url.Content("~/Content/Images/home-small.png")" />
+            @Html.MvcSiteMap().SiteMapPath()
+        </div>
+
+    </header>
+
+    
+        @RenderBody()
+    
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy;Twoja Manufaktura</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    @RenderSection("ScriptsBottom", required: false)
+</body>
+</html>
