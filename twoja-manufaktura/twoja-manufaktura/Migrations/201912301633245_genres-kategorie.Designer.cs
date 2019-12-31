@@ -7,13 +7,13 @@ namespace twoja_manufaktura.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0-preview3-19553-01")]
-    public sealed partial class Userowner : IMigrationMetadata
+    public sealed partial class genreskategorie : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Userowner));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(genreskategorie));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912291606543_User-owner"; }
+            get { return "201912301633245_genres-kategorie"; }
         }
         
         string IMigrationMetadata.Source

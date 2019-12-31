@@ -372,8 +372,8 @@ namespace twoja_manufaktura.Controllers
         //    return new HttpStatusCodeResult(HttpStatusCode.OK);
         //}
 
-        [Authorize(Roles = "Admin")]
-            public ActionResult AddProduct(int? productId, bool? confirmSuccess)
+            [Authorize(Roles = "Admin")]
+            public ActionResult DodajProdukt(int? productId, bool? confirmSuccess)
             {
                 if (productId.HasValue)
                     ViewBag.EditMode = true;
@@ -381,8 +381,8 @@ namespace twoja_manufaktura.Controllers
                     ViewBag.EditMode = false;
 
                 var result = new EditProductViewModel();
-                var genres = db.Genres.ToArray();
-                result.Genres = genres;
+                var kategorie = db.Kategorie.ToArray();
+                result.Kategorie = kategorie;
                 result.ConfirmSuccess = confirmSuccess;
 
                 Product p;
@@ -401,69 +401,66 @@ namespace twoja_manufaktura.Controllers
                 return View(result);
             }
 
-            [HttpPost]
-            public ActionResult AddProduct(HttpPostedFileBase file, EditProductViewModel model)
+        [HttpPost]
+        public ActionResult DodajProdukt(HttpPostedFileBase file, EditProductViewModel model)
+        {
+            if (model.Product.ProductId > 0)
             {
-                if (model.Product.ProductId > 0)
+                db.Entry(model.Product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("DodajProdukt", new { confirmSuccess = true });
+            }
+            else
+            {
+                if (file != null && file.ContentLength > 0)
                 {
-                    // Saving existing entry
-
-                    db.Entry(model.Product).State = EntityState.Modified;
-                    db.SaveChanges();
-                    return RedirectToAction("AddProduct", new { confirmSuccess = true });
-                }
-                else
-                {
-                    // Creating new entry
-
-                    var f = Request.Form;
-                    // Verify that the user selected a file
-                    if (file != null && file.ContentLength > 0)
+                    if (ModelState.IsValid)
                     {
-                        // Generate filename
-
+                        //generowanie pliku
                         var fileExt = Path.GetExtension(file.FileName);
                         var filename = Guid.NewGuid() + fileExt;
-
-                        //var path = Path.Combine(Server.MapPath(AppConfig.PhotosFolderRelative), filename);
-                        //file.SaveAs(path);
-
-                        // Save info to DB
+                        var path = Path.Combine(Server.MapPath(AppConfig.imagesFolderRelative), filename);
+                        file.SaveAs(path);
+                        //zapisywanie do bazy danych
                         model.Product.PhotoFileName = filename;
                         model.Product.DateAdded = DateTime.Now;
-
                         db.Entry(model.Product).State = EntityState.Added;
                         db.SaveChanges();
+                        return RedirectToAction("DodajProdukt", new { confirmSuccess = true });
 
-                        return RedirectToAction("AddProduct", new { confirmSuccess = true });
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Nie wskazano pliku.");
-                        var genres = db.Genres.ToArray();
-                        model.Genres = genres;
+                        var kategorie = db.Kategorie.ToArray();
+                        model.Kategorie = kategorie;
                         return View(model);
                     }
                 }
-
+                else
+                {
+                    ModelState.AddModelError("", "Nie wskazano pliku.");
+                    var kategorie = db.Kategorie.ToArray();
+                    model.Kategorie = kategorie;
+                    return View(model);
+                }
             }
-
-            public ActionResult HideProduct(int productId)
+        }
+            public ActionResult UkryjProdukt(int productId)
             {
                 var product = db.Products.Find(productId);
                 product.IsHidden = true;
                 db.SaveChanges();
 
-                return RedirectToAction("AddProduct", new { confirmSuccess = true });
+                return RedirectToAction("DodajProdukt", new { confirmSuccess = true });
             }
 
-            public ActionResult UnhideProduct(int productId)
+            public ActionResult OdkryjProdukt(int productId)
             {
                 var product = db.Products.Find(productId);
                 product.IsHidden = false;
                 db.SaveChanges();
 
-                return RedirectToAction("AddProduct", new { confirmSuccess = true });
+                return RedirectToAction("DodajProdukt", new { confirmSuccess = true });
             }
 
         }

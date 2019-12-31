@@ -44,6 +44,10 @@
                             <div id="product-details-info">
                                 Bezpłatna  przesyłka, czas realizacji 24 h.
                             </div>
+                            @if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <a href="@Url.Action("DodajProdukt", "Manage", new { productId = Model.ProductId })" style="margin-top: 20px; font-weight: bold; display: block;">Edytuj</a>
+                            }
                         </div>
                     </section>
 

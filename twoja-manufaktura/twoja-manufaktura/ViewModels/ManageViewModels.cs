@@ -57,7 +57,7 @@ namespace twoja_manufaktura.Models
     public class EditProductViewModel
     {
         public Product Product { get; set; }
-        public IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<Kategoria> Kategorie { get; set; }
         public bool? ConfirmSuccess { get; set; }
     }
 }

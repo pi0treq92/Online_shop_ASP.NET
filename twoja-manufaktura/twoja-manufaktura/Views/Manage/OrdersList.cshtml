@@ -65,7 +65,7 @@
                                     <li>
                                         <article>
                                             <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = orderItem.ProductId })">
-                                                <img class="album-cover" src="@Url.Content("~/Content/Covers/" + orderItem.Product.PhotoFileName)" />
+                                                <img class="album-cover" src="@Url.Content("~/Content/Images/" + orderItem.Product.PhotoFileName)" />
                                                 <h1>
                                                     @orderItem.Product.Name<br />
                                                     <strong>sztuk: @orderItem.Quantity, łącznie: @(orderItem.Quantity * @orderItem.UnitPrice)  zł</strong>

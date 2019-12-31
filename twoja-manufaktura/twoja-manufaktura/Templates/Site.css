@@ -176,7 +176,7 @@ a:hover, a:visited, a:link, a:active {
     vertical-align: top;
 }
 
-div.nav.genres-horizontal ul {
+div.nav.kategorie-horizontal ul {
     overflow: hidden;
     border-left: 1px solid #E5E5E5;
     border-top: 1px solid #E5E5E5;
@@ -234,7 +234,7 @@ div.nav.genres-horizontal ul {
     }
 
 
-nav.genres-vertical {
+nav.kategorie-vertical {
     width: 202px;
     font-size: 18px;
     font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
@@ -242,16 +242,16 @@ nav.genres-vertical {
     float: left;
 }
 
-    nav.genres-vertical ul li {
+    nav.kategorie-vertical ul li {
         height: 50px;
         line-height: 50px;
     }
 
-        nav.genres-vertical ul li:hover {
+        nav.kategorie-vertical ul li:hover {
             background-color: #EBEBEB;
         }
 
-        nav.genres-vertical ul li a {
+        nav.kategorie-vertical ul li a {
             width: 100%;
             display: block;
             height: 100%;
@@ -900,7 +900,6 @@ a.button-link:visited, a.button-link:link, a.button-link:active {
     #albumedit-address-table input {
         border: 1px solid gray;
         width: 250px;
-        height: 20px;
         padding: 5px;
     }
 

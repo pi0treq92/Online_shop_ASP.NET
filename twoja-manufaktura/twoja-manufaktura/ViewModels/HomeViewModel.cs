@@ -9,7 +9,7 @@ namespace twoja_manufaktura.ViewModels
     public class HomeViewModel
     {
         public IEnumerable<Product> Bestsellers { get; set; }
-        public IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<Kategoria> Kategorie { get; set; }
         public IEnumerable<Product> NewArrivals { get; set; }
     }
 }

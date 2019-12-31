@@ -26,7 +26,7 @@
                             <tr id="cart-row-@koszykItem.Product.ProductId">
                                 <td>
                                     <a href="@Url.Action("Details", "Store", new { id = koszykItem.Product.ProductId })">
-                                        <img src="@Url.Content("~/Content/Covers/" + koszykItem.Product.PhotoFileName)" />
+                                        <img src="@Url.Content("~/Content/Images/" + koszykItem.Product.PhotoFileName)" />
                                     </a>
                                 </td>
                                 <td><a href="@Url.Action("Details", "Store", new { id = koszykItem.Product.ProductId })">@koszykItem.Product.Name</a></td>

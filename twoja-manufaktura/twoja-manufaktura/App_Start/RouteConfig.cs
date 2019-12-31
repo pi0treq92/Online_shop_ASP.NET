@@ -26,7 +26,7 @@ namespace twoja_manufaktura
 
             routes.MapRoute(
                 name: "ProductList",
-                url: "gatunki/{genrename}",
+                url: "kategorie/{genrename}",
                 defaults: new { controller = "Store", action = "List" },
                 constraints: new {genrename = @"[\w& ]+"}
                 );

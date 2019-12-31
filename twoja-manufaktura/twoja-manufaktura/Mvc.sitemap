@@ -6,14 +6,14 @@
   <mvcSiteMapNode title="Start" controller="Home" action="Index">
     <mvcSiteMapNode title="Grupa" controller="Store" action="List" dynamicNodeProvider="twoja_manufaktura.Infrastructure.ProductListDynamiNodeProvider, twoja-manufaktura">
       <mvcSiteMapNode title="Product" controller="Store" action="Details" dynamicNodeProvider="twoja_manufaktura.Infrastructure.ProductDetailsDynamicNodeProvider, twoja-manufaktura"/>
-  <mvcSiteMapNode title="Koszyk" controller="Cart" action="Index">
-      <mvcSiteMapNode title="Dane zamówienia" controller="Cart" action="Checkout" />
-      <mvcSiteMapNode title="Potwierdzenie zamówienia" controller="Cart" action="OrderConfirmation" />
+  <mvcSiteMapNode title="Koszyk" controller="Koszyk" action="Index">
+      <mvcSiteMapNode title="Dane zamówienia" controller="Koszyk" action="Checkout" />
+      <mvcSiteMapNode title="Potwierdzenie zamówienia" controller="Koszyk" action="PotwierdzenieZamowienia" />
     </mvcSiteMapNode>        
     <mvcSiteMapNode title="Konto" controller="Manage" action="Index">      
       <mvcSiteMapNode title="Rejestracja" controller="Account" action="Register" />
       <mvcSiteMapNode title="Logowanie" controller="Account" action="Login" />
-      <mvcSiteMapNode title="Edycja produktu" controller="Manage" action="AddProduct" />
+      <mvcSiteMapNode title="Edycja produktu" controller="Manage" action="DodajProdukt" />
       <mvcSiteMapNode title="Twoje dane" controller="Manage" action="Index" />
       <mvcSiteMapNode title="Zamówienia" controller="Manage" action="OrdersList" />
     </mvcSiteMapNode>

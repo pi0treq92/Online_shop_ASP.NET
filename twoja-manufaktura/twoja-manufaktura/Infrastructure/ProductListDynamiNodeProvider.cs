@@ -14,11 +14,11 @@ namespace twoja_manufaktura.Infrastructure
         public override IEnumerable<DynamicNode> GetDynamicNodeCollection(ISiteMapNode node)
         {
             var returnValue = new List<DynamicNode>();
-            foreach (Genre p in db.Genres)
+            foreach (Kategoria p in db.Kategorie)
             {
                 DynamicNode node1 = new DynamicNode();
                 node1.Title = p.Name;
-                node1.Key = "Genre_" + p.GenreId;
+                node1.Key = "Kategoria_" + p.KategoriaId;
                 node1.RouteValues.Add("genrename", p.Name);
                 returnValue.Add(node1);
 

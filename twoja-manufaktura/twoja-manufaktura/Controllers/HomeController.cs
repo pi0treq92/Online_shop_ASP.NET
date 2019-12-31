@@ -15,13 +15,13 @@ namespace twoja_manufaktura.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var genres = db.Genres.ToList();
+            var kategorie = db.Kategorie.ToList();
             var newArrivals = db.Products.Where(a => !a.IsHidden).OrderByDescending(a => a.DateAdded).Take(3).ToList();
             var bestsellers = db.Products.Where(a => a.IsBestseller && !a.IsHidden).Take(3).ToList();
             var vm = new HomeViewModel()
             {
                 Bestsellers = bestsellers,
-                Genres = genres,
+                Kategorie = kategorie,
                 NewArrivals = newArrivals
             };
 

@@ -24,8 +24,8 @@ namespace twoja_manufaktura.Controllers
         public ActionResult List(string genrename, string searchQuery = null)
         {
 
-            var genre = db.Genres.Include("Products").Where(g => g.Name.ToUpper() == genrename.ToUpper()).Single();
-            var products = genre.Products.Where(p => searchQuery==null ||
+            var kategoria = db.Kategorie.Include("Products").Where(g => g.Name.ToUpper() == genrename.ToUpper()).Single();
+            var products = kategoria.Products.Where(p => searchQuery==null ||
                             p.Name.ToLower().Contains(searchQuery.ToLower()) ||
                             p.Description.ToLower().Contains(searchQuery.ToLower()) 
                             && !p.IsHidden);
@@ -42,8 +42,8 @@ namespace twoja_manufaktura.Controllers
         //Drugi argument to czas przechowywania w sekundach
         public ActionResult GenresMenu()
         {
-            var genres = db.Genres.ToList();
-            return PartialView("_GenresMenu", genres);
+            var kategorie = db.Kategorie.ToList();
+            return PartialView("_GenresMenu", kategorie);
         }
 
         public ActionResult ProductsSuggestions(string term)

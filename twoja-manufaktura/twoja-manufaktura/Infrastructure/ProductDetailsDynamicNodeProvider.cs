@@ -19,7 +19,7 @@ namespace twoja_manufaktura.Infrastructure
                 DynamicNode node1 = new DynamicNode();
                 node1.Title = p.Name;
                 node1.Key = "Product_" + p.ProductId;
-                node1.ParentKey = "Genre_" + p.GenreId;
+                node1.ParentKey = "Kategoria_" + p.KategoriaId;
                 node1.RouteValues.Add("id", p.ProductId);
                 returnValue.Add(node1);
 

@@ -266,29 +266,9 @@
     <Compile Include="Infrastructure\ProductListDynamiNodeProvider.cs" />
     <Compile Include="Infrastructure\SessionManager.cs" />
     <Compile Include="Infrastructure\UrlHelpers.cs" />
-    <Compile Include="Migrations\201911151754592_InitialCreate.cs" />
-    <Compile Include="Migrations\201911151754592_InitialCreate.designer.cs">
-      <DependentUpon>201911151754592_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912281809496_AddedAspNetIdentity.cs" />
-    <Compile Include="Migrations\201912281809496_AddedAspNetIdentity.designer.cs">
-      <DependentUpon>201912281809496_AddedAspNetIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912291530160_Checkout.cs" />
-    <Compile Include="Migrations\201912291530160_Checkout.designer.cs">
-      <DependentUpon>201912291530160_Checkout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912291550114_Order.cs" />
-    <Compile Include="Migrations\201912291550114_Order.designer.cs">
-      <DependentUpon>201912291550114_Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912291554039_Order1.cs" />
-    <Compile Include="Migrations\201912291554039_Order1.designer.cs">
-      <DependentUpon>201912291554039_Order1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912291606543_User-owner.cs" />
-    <Compile Include="Migrations\201912291606543_User-owner.designer.cs">
-      <DependentUpon>201912291606543_User-owner.cs</DependentUpon>
+    <Compile Include="Migrations\201912301633245_genres-kategorie.cs" />
+    <Compile Include="Migrations\201912301633245_genres-kategorie.designer.cs">
+      <DependentUpon>201912301633245_genres-kategorie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -343,6 +323,7 @@
     <Content Include="Views\Koszyk\PotwierdzenieZamowienia.cshtml" />
     <Content Include="Views\Manage\OrdersList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
+    <Content Include="Views\Manage\DodajProdukt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -367,23 +348,8 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.7\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911151754592_InitialCreate.resx">
-      <DependentUpon>201911151754592_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912281809496_AddedAspNetIdentity.resx">
-      <DependentUpon>201912281809496_AddedAspNetIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912291530160_Checkout.resx">
-      <DependentUpon>201912291530160_Checkout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912291550114_Order.resx">
-      <DependentUpon>201912291550114_Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912291554039_Order1.resx">
-      <DependentUpon>201912291554039_Order1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912291606543_User-owner.resx">
-      <DependentUpon>201912291606543_User-owner.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912301633245_genres-kategorie.resx">
+      <DependentUpon>201912301633245_genres-kategorie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

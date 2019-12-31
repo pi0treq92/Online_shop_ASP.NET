@@ -45,10 +45,10 @@
         </ul>
         <br />
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Szukaj produktu..." data-inset="true">
-            @foreach (var genre in Model.Genres)
+            @foreach (var kategoria in Model.Kategorie)
             {
                 <li>
-                    <a href="@Url.Action("List", "Store", new { genrename = genre.Name})" data-ajax="false">@genre.Name</a>
+                    <a href="@Url.Action("List", "Store", new { genrename = kategoria.Name})" data-ajax="false">@kategoria.Name</a>
                 </li>
             }
         </ul>

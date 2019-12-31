@@ -47,8 +47,8 @@
             </a>
             @if (@User.IsInRole("Admin"))
             {
-                <a class="manageLink" href="@Url.Action("AddProduct", "Manage")">
-                    Dodaj
+                <a class="manageLink" href="@Url.Action("DodajProdukt", "Manage")">
+                    Dodaj Produkt
                 </a>
                 <a class="manageLink" href="@Url.Content("~/hangfire")">
                     Jobs
