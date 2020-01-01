@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/_ManageLayout.cshtml";
 }
 
-<h2>Zamówienia</h2>
-<div>
+<h2 style="padding: 50px 50px 20px 100px">Zamówienia</h2>
+<div style="width: 1000px; margin-left:100px">
 
     @if (Model.Any())
     {
@@ -94,6 +94,7 @@
             Brak zamówień.
         </div>
     }
+    </div>
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(".orderstateddl").on('change', function (e) {

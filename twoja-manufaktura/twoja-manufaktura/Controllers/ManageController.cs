@@ -208,54 +208,6 @@ namespace twoja_manufaktura.Controllers
                 return RedirectToAction("Index", new { Message = message });
             }
 
-            //[HttpPost]
-            //[ValidateAntiForgeryToken]
-            //public ActionResult LinkLogin(string provider)
-            //{
-            //    // Request a redirect to the external login provider to link a login for the current user
-            //    return new AccountController.ChallengeResult(provider, Url.Action("LinkLoginCallback", "Manage"), User.Identity.GetUserId());
-            //}
-
-            //// Used for XSRF protection when adding external logins
-            //private const string XsrfKey = "XsrfId";
-
-            //public async Task<ActionResult> LinkLoginCallback()
-            //{
-            //    var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
-            //    if (loginInfo == null)
-            //    {
-            //        return RedirectToAction("Index", new { Message = ManageMessageId.Error });
-            //    }
-            //    var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
-            //    return result.Succeeded ? RedirectToAction("Index", new { Message = ManageMessageId.LinkSuccess }) : RedirectToAction("Index", new { Message = ManageMessageId.Error });
-            //}
-
-            //[HttpPost]
-            //[ValidateAntiForgeryToken]
-            //public async Task<ActionResult> RemoveLogin(string loginProvider, string providerKey)
-            //{
-            //    ManageMessageId? message;
-            //    var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
-            //    if (result.Succeeded)
-            //    {
-            //        var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            //        if (user != null)
-            //        {
-            //            await SignInAsync(user, isPersistent: false);
-            //        }
-            //        message = ManageMessageId.RemoveLoginSuccess;
-            //    }
-            //    else
-            //    {
-            //        message = ManageMessageId.Error;
-            //    }
-            //    return RedirectToAction("Index", new { Message = message });
-            //}
-
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="result"></param>
             private void AddErrors(IdentityResult result)
             {
                 foreach (var error in result.Errors)

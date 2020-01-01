@@ -675,7 +675,7 @@ div.section-header {
 #cart-table {
     width: 100%;
     border-collapse: collapse;
-    margin-left: -40px;
+    margin-left: 0px;
 }
 
     #cart-table tr {

@@ -4,9 +4,9 @@
     Layout = "~/Views/Shared/_ManageLayout.cshtml";
 }
 
-<hr />
+<hr style="width: 1000px;" />
 
-<h2 style="margin-bottom: 30px">Twoje dane</h2>
+<h2 style="width: 1000px; margin-bottom: 30px">Twoje dane</h2>
 
 
 @using (@Html.BeginForm("ChangeProfile", "Manage"))
@@ -64,11 +64,11 @@
 }
 
 
-<hr />
+<hr style="width: 1000px;" />
 
 @if (Model.HasPassword)
 {
-    <h2 style="margin-bottom: 30px">Zmiana hasła</h2>
+    <h2 style="width: 1000px; margin-bottom: 30px">Zmiana hasła</h2>
 
     using (Html.BeginForm("ChangePassword", "Manage", FormMethod.Post))
     {

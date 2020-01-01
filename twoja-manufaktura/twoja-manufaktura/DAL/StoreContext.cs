@@ -24,10 +24,10 @@ namespace twoja_manufaktura.DAL
         {
             return new StoreContext();
         }
-        public DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Kategoria> Kategorie { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
+        public virtual DbSet<OrderItem> OrderItems { get; set; }
 
     }
 }

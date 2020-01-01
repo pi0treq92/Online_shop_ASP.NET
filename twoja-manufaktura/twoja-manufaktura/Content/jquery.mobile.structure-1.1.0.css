@@ -17,10 +17,10 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page { top: 0; left: 0; width: 100%; min-height: 100%; position: absolute; display: none; border: 0; }
 .ui-mobile .ui-page-active { display: block; overflow: visible; }
 .ui-page { outline: none; }
-@media screen and (orientation: portrait){
+ screen and (orientation: portrait){
 .ui-mobile, .ui-mobile .ui-page { min-height: 420px; }
 }
-@media screen and (orientation: landscape){
+ screen and (orientation: landscape){
 .ui-mobile, .ui-mobile .ui-page { min-height: 300px; }
 }
 .ui-loading .ui-loader { display: block; }
@@ -744,7 +744,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-controlgroup-horizontal .ui-checkbox:last-child, .ui-controlgroup-horizontal .ui-radio:last-child { margin-right: 0; }
 .ui-controlgroup-horizontal .ui-controlgroup-last { margin-right: 0; }
 .ui-controlgroup .ui-checkbox label, .ui-controlgroup .ui-radio label { font-size: 16px;  }
-@media all and (min-width: 450px){
+ all and (min-width: 450px){
 	.ui-field-contain .ui-controlgroup-label { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0;  }
 	.ui-field-contain .ui-controlgroup-controls { width: 60%; display: inline-block; }
 	.ui-field-contain .ui-controlgroup .ui-select { width: 100%; } 
@@ -813,7 +813,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 .ui-header .ui-field-contain-right {
 	right: 1em;
 }
-@media all and (min-width: 450px){
+ all and (min-width: 450px){
 	.ui-field-contain, .ui-mobile fieldset.ui-field-contain { border-width: 0; padding: 0; margin: 1em 0; }
 }
 .ui-select { display: block; position: relative; }
@@ -839,7 +839,7 @@ label.ui-select { font-size: 16px; line-height: 1.4;  font-weight: normal; margi
 .ui-selectmenu-list .ui-li .ui-icon { display: block; }
 .ui-li.ui-selectmenu-placeholder { display: none; }
 .ui-selectmenu .ui-header .ui-title { margin: 0.6em 46px 0.8em; }
-@media all and (min-width: 450px){	
+ all and (min-width: 450px){	
 	.ui-field-contain label.ui-select { vertical-align: top;  display: inline-block;  width: 20%;  margin: 0 2% 0 0; }
 	.ui-field-contain .ui-select { width: 60%; display: inline-block; }
 }	
@@ -858,7 +858,7 @@ textarea.ui-input-text { height: 50px; -webkit-transition: height 200ms linear; 
 .ui-input-search .ui-input-clear-hidden { display: none; }
 input.ui-mini, .ui-mini input, textarea.ui-mini { font-size: 14px; }
 textarea.ui-mini { height: 45px; }
-@media all and (min-width: 450px){
+ all and (min-width: 450px){
 	.ui-field-contain label.ui-input-text  { vertical-align: top; display: inline-block;  width: 20%;  margin: 0 2% 0 0 }
 	.ui-field-contain input.ui-input-text, 
 	.ui-field-contain textarea.ui-input-text, 
@@ -895,7 +895,7 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; }
 .ui-listview .ui-li-icon { max-height: 40px; max-width: 40px; left: 10px; top: .9em; }
 .ui-li-thumb, .ui-listview .ui-li-icon, .ui-li-content { float: left; margin-right: 10px; }
 .ui-li-aside { float: right; width: 50%; text-align: right; margin: .3em 0; }
-@media all and (min-width: 480px){
+ all and (min-width: 480px){
 	 .ui-li-aside { width: 45%; }
 }	 
 .ui-li-divider { cursor: default; }
@@ -912,7 +912,7 @@ ol.ui-listview .ui-li-jsnumbering:before { content: "" !important; }
 .ui-listview-filter .ui-input-search { margin: 5px; width: auto; display: block; }
 .ui-listview-filter-inset { margin: -15px -5px -15px -5px; background: transparent; }
 .ui-li.ui-screen-hidden{display:none;}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+ only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .ui-li .ui-btn-text { overflow:  visible; }
 }
 label.ui-slider { font-size: 16px; line-height: 1.4;  font-weight: normal; margin: 0 0 .3em; display: block; }
@@ -926,7 +926,7 @@ div.ui-slider-bg { border: none; height: 100%; padding-right: 8px; }
 a.ui-slider-handle .ui-btn-inner { padding: 0; height: 100%; }
 div.ui-slider-mini a.ui-slider-handle { height: 14px; width: 14px; margin: -8px 0 0 -7px; }
 div.ui-slider-mini a.ui-slider-handle .ui-btn-inner { height: 30px; width: 30px; padding: 0; margin: -9px 0 0 -9px; }
-@media all and (min-width: 450px){
+ all and (min-width: 450px){
 	.ui-field-contain label.ui-slider { vertical-align: top; display: inline-block; width: 20%; margin: 0 2% 0 0; }
 	.ui-field-contain div.ui-slider { width: 43%; }
 	.ui-field-contain div.ui-slider-switch { width: 5.5em; }

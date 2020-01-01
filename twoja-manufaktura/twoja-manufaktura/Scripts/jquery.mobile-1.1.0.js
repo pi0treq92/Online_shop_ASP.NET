@@ -1565,7 +1565,7 @@ var $window = $( window ),
 	examples:
 		$.mobile.media('screen') // tests for screen media type
 		$.mobile.media('screen and (min-width: 480px)') // tests for screen media type with window width > 480px
-		$.mobile.media('@media screen and (-webkit-min-device-pixel-ratio: 2)') // tests for webkit 2x pixel ratio (iPhone 4)
+		$.mobile.media(' screen and (-webkit-min-device-pixel-ratio: 2)') // tests for webkit 2x pixel ratio (iPhone 4)
 */
 $.mobile.media = (function() {
 	// TODO: use window.matchMedia once at least one UA implements it
@@ -1576,7 +1576,7 @@ $.mobile.media = (function() {
 	return function( query ) {
 		if ( !( query in cache ) ) {
 			var styleBlock = document.createElement( "style" ),
-				cssrule = "@media " + query + " { #jquery-mediatest { position:absolute; } }";
+				cssrule = " " + query + " { #jquery-mediatest { position:absolute; } }";
 
 			//must set type for IE!
 			styleBlock.type = "text/css";

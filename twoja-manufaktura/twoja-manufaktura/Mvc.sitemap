@@ -4,7 +4,7 @@
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
   <mvcSiteMapNode title="Start" controller="Home" action="Index">
-    <mvcSiteMapNode title="Grupa" controller="Store" action="List" dynamicNodeProvider="twoja_manufaktura.Infrastructure.ProductListDynamiNodeProvider, twoja-manufaktura">
+    <mvcSiteMapNode title="Grupa" controller="Store" action="List" dynamicNodeProvider="twoja_manufaktura.Infrastructure.ProductListDynamiNodeProvider, twoja-manufaktura"/>
       <mvcSiteMapNode title="Product" controller="Store" action="Details" dynamicNodeProvider="twoja_manufaktura.Infrastructure.ProductDetailsDynamicNodeProvider, twoja-manufaktura"/>
   <mvcSiteMapNode title="Koszyk" controller="Koszyk" action="Index">
       <mvcSiteMapNode title="Dane zamówienia" controller="Koszyk" action="Checkout" />
@@ -18,6 +18,5 @@
       <mvcSiteMapNode title="Zamówienia" controller="Manage" action="OrdersList" />
     </mvcSiteMapNode>
   </mvcSiteMapNode>
- </mvcSiteMapNode>
 
 </mvcSiteMap>

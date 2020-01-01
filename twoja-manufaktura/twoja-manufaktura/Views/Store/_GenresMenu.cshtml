@@ -8,7 +8,7 @@
             @foreach (var kategoria in Model)
             {
                 <a href="@Url.Action("List", "Store", new {genrename = kategoria.Name.ToLower() })"
-                   style="background-image: url(@Url.GenreIconPath(kategoria.IconFileName));background-position:right;background-repeat:no-repeat" class="list-group-item">@kategoria.Name</a>
+                   style="background-image: url(@Url.GenreIconPath(kategoria.IconFileName));background-position:right;background-repeat:no-repeat; height: 50px;" class="list-group-item">@kategoria.Name</a>
 
             }
 

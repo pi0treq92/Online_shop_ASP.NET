@@ -11,12 +11,12 @@
             <div id="productlist-content">
                 <div id="productlist-rightsection">
                     <div id="breadcrumb-section">
-                        <img src="../Content/Images/home-small.png" />
+                        <img src="@Url.Content("~/Content/Icons/64/iconmonstr-home-1-64.png")" />
                             @Html.MvcSiteMap().SiteMapPath()
                         </div>
                     </div>
                     <section class="content-section">
-                        <div class="section-header" style="margin-bottom: 0px;">
+                        <div class="section-header" style="margin-top: 30px;">
                             <h1>Twój koszyk</h1>
                         </div>
 
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="section-button-container">
-                            <a class="button-link" href="">Kontynuuj zakupy</a>
+                            <a class="button-link" style="margin-left: 50px; color: #dfdfdf">Kontynuuj zakupy</a>
                             @if (Model.TotalPrice > 0)
                             {
                             <a class="button-link" id="cart-button-checkout" href="@Url.Action("Checkout", "Koszyk")">Zapłać</a>

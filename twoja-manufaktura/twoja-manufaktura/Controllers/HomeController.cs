@@ -16,8 +16,8 @@ namespace twoja_manufaktura.Controllers
         public ActionResult Index()
         {
             var kategorie = db.Kategorie.ToList();
-            var newArrivals = db.Products.Where(a => !a.IsHidden).OrderByDescending(a => a.DateAdded).Take(3).ToList();
-            var bestsellers = db.Products.Where(a => a.IsBestseller && !a.IsHidden).Take(3).ToList();
+            var newArrivals = db.Products.Where(a => !a.IsHidden).OrderByDescending(a => a.DateAdded).Take(5).ToList();
+            var bestsellers = db.Products.Where(a => a.IsBestseller && !a.IsHidden).Take(5).ToList();
             var vm = new HomeViewModel()
             {
                 Bestsellers = bestsellers,

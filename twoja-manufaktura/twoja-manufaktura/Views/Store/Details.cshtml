@@ -11,7 +11,7 @@
             <div id="productlist-content">
                 <div id="productlist-rightsection">
                     <div id="breadcrumb-section">
-                        <img src="../Content/Images/home-small.png" />
+                        <img src="@Url.Content("~/Content/Icons/64/iconmonstr-home-1-64.png")" />
                         @Html.MvcSiteMap().SiteMapPath()
                     </div>
                     <section id="product-details-section">
@@ -36,7 +36,9 @@
                                 <div>
                                     @Model.Price<span>PLN</span>
                                 </div>
-                                <a href="@Url.Action("DodajDoKoszyka", "Koszyk", new {id = Model.ProductId }) "></a>
+                                <a href="@Url.Action("DodajDoKoszyka", "Koszyk", new {id = Model.ProductId }) style="background-color: #7C7C7C;"">
+                                    <img src="/Content/Icons/64/iconmonstr-basket-14-48.png" style="margin-left: 10px; margin-top: 8px;"/>
+                                </a>
                             </div>
                             <div id="product-details-description">
                                 @Model.Description

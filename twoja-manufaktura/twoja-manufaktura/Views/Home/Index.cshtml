@@ -31,7 +31,7 @@
                     @foreach (var kategoria in Model.Kategorie)
                     {
                     <a href="@Url.Action("List", "Store", new {genrename = kategoria.Name.ToLower() })" 
-                       style="background-image: url(@Url.GenreIconPath(kategoria.IconFileName));background-position:right;background-repeat:no-repeat" class="list-group-item">@kategoria.Name</a>
+                       style="background-image: url(@Url.GenreIconPath(kategoria.IconFileName));background-position:right;background-repeat:no-repeat; height: 50px;" class="list-group-item">@kategoria.Name</a>
                     
                     }
 
@@ -49,13 +49,13 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                            <img class="d-block img-fluid" src="@Url.Content("~/Content/Images/Edinburgh-skyline-900x350.jpg")" alt="First slide" />
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                            <img class="d-block img-fluid" src="@Url.Content("~/Content/Images/Christchurch-Lake-900x350.jpg")" alt="Second slide" />
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                            <img class="d-block img-fluid" src="@Url.Content("~/Content/Images/Viestintä-900x350.jpg")" alt="Third slide"/>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,7 +73,7 @@
                     {
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a class="productdetailslink" href="asd">
+                                <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = newArrival.ProductId })">
                                     <img class="card-img-top" src="@Url.ProductImagePath(newArrival.PhotoFileName)">
                                 </a>
                                 <div class="card-body">
@@ -97,7 +97,7 @@
 
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a class="productdetailslink" href="asd">
+                                <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = bestseller.ProductId })">
                                     <div class="newFlag"></div>
                                     <img class="card-img-top" src="@Url.ProductImagePath(bestseller.PhotoFileName)">
                                 </a>
@@ -106,7 +106,7 @@
                                         <a class="productdetailslink" href="@Url.Action("Details", "Store", new {id = bestseller.ProductId })">@bestseller.Name</a>
                                     </h4>
                                     <h5>@bestseller.Price $</h5>
-                                    <a class="addtocartlink" href="@Url.Action("AddToCart", "Cart", new {id = bestseller.ProductId })">
+                                    <a class="addtocartlink" href="@Url.Action("DodajDoKoszyka", "Koszyk", new {id = bestseller.ProductId })">
                                         <img src="/Content/Icons/64/iconmonstr-basket-14-48.png">
                                     </a>
                                     <p class="card-text">@bestseller.Description</p>
@@ -117,29 +117,6 @@
                             </div>
                         </div>
                     }
-
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a class="productdetailslink" href="asd">
-                                <div class="newFlag"></div>
-                                <img class="card-img-top" src="/Content/Images/pierwszy-obraz.jpg" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a class="productdetailslink" href="asd">Item Six</a>
-                                </h4>
-                                <h5>$24.99</h5>
-                                <a class="addtocartlink" href="aaaa">
-                                    <img src="/Content/Icons/64/iconmonstr-basket-14-48.png">
-                                </a>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>

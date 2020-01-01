@@ -111,6 +111,16 @@ namespace twoja_manufaktura.Controllers
                 TryUpdateModel(user.UserData);
                 await UserManager.UpdateAsync(user);
                 koszykManager.PustyKoszyk();
+
+                var orderToModify = db.Orders.Include("OrderItems").Include("OrderItems.Product").SingleOrDefault(o => o.OrderId == order.OrderId);
+                PotwierdzenieZamowieniaEmail email = new PotwierdzenieZamowieniaEmail();
+                email.Do = order.Email;
+                email.Koszt = order.TotalPrice;
+                email.NumerZamowienia = order.OrderId;
+                email.Adres = string.Format("{0} {1}, {2}, {3}, {4}", order.Name, order.LastName, order.Address, order.Code, order.City);
+                email.OrderItems = order.OrderItems;
+                email.PhotoPath = AppConfig.imagesFolderRelative;
+                email.Send();
                 return RedirectToAction("PotwierdzenieZamowienia");
             }
             else

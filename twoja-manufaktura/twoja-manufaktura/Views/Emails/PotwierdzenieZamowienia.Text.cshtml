@@ -1,0 +1,20 @@
+﻿﻿@model twoja_manufaktura.ViewModels.PotwierdzenieZamowieniaEmail
+    Content-Type: text/plain; charset=utf-8
+
+    Dziękujemy!
+
+    Złożyłeś zamówienie w sklepie spodigly.pl. Postaramy się, aby zamówione płyty dotarły do Ciebie w ciągu 24 godzin.
+
+    Prosimy o przelanie kwoty @Model.Koszt zł, tytułem: "zamówienie nr @Model.NumerZamowienia" na nasze konto bankowe:
+
+    Twoja Manufaktura Sp. z o.o
+    ul. Przutulna
+    80-176 Gdańsk
+    PKO BP 56 1111 0000 1111 0000 1111
+
+    Zaraz po otrzymaniu środków wyślemy przesyłkę kurierską pod adres: @Model.Adres.
+
+    Tutaj znajdziesz szczegóły Twojego zamówienia: @Url.Action("OrdersList", "Manage", null, "https")
+
+    Dziękujemy i zapraszamy ponownie!
+    Sklep Twoja Manufaktura
